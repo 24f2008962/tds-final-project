@@ -18,7 +18,7 @@ load_dotenv()
 
 class Config:
     LLM_MODEL: str = os.getenv("LLM_MODEL", "openai/gpt-4o")
-    MY_SECRET: str = os.getenv("MY_SECRET", "my-super-secret-123")
+    MY_SECRET: str = os.getenv("SECRET", "sk_1234567890abcdefghijklmnopqrstuvwxyz")
     AIPIPE_TOKEN: str = os.getenv("AIPIPE_TOKEN")
     GITHUB_TOKEN: str = os.getenv("GITHUB_TOKEN")
     GITHUB_USERNAME: str = os.getenv("GITHUB_USERNAME")
@@ -482,3 +482,4 @@ def handle_build_request(request_data: BuildRequest, background_tasks: Backgroun
 @app.get("/")
 async def root():
     return {"message": "Task Receiver Service is running. Post to /api/build to submit a task."}
+
